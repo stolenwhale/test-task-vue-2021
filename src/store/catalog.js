@@ -20,13 +20,13 @@ export default {
         const itemName = state.names[itemGroupId].B[itemId].N;
 
         const isGroupExist = list.filter(item => item.id === itemGroupId).length;
-        const price_rub = (parseInt(item.C) * state.exchange).toFixed(2);
+        const price_rub = parseInt(item.C.toFixed(2)) * state.exchange;
 
         const itemObj = {
           id: itemId,
           name: itemName,
           price: item.C,
-          price_rub,
+          price_rub: price_rub,
           quantity: item.P
         };
 
